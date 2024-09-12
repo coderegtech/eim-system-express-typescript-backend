@@ -76,3 +76,28 @@ export const getAllSuppliers = async (
     return res.status(500).json({ error: err.message });
   }
 };
+
+// export const getSupplier = async (
+//   req: Request,
+//   res: Response,
+//   next: NextFunction
+// ) => {
+//   try {
+//     const supplierName = req.query.q
+
+//     const supplier = await prisma.suppliers.findMany({
+//       where: {
+//         supplierName: {
+//           contains: supplierName,
+//         },
+//       },
+//     });
+
+//     if (supplier) {
+//       return res.status(200).json(supplier);
+//     }
+//     next();
+//   } catch (err: any) {
+//     return res.status(500).json({ error: err.message });
+//   }
+// };

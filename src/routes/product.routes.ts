@@ -5,7 +5,7 @@ import verifyJWT from "../middleware/verifyJWT";
 
 const router = Router();
 
-router.post("/create", upload.single("productImg"), addProduct);
+router.post("/create", verifyJWT, upload.single("productImg"), addProduct);
 router.get("/all", getAllProducts);
 router.get("/search", getProduct);
 router.get("/count", productsCount);
